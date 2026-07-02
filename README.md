@@ -4,6 +4,11 @@ Add emphasis motion to a flat talking-head video: **dramatic hard-cut punch-zoom
 
 Built for vertical (9:16) social clips — LinkedIn hot-takes, TikToks, Shorts — where a flat talking-head needs energy without a manual editing timeline.
 
+<p align="center">
+  <img src="docs/comparison.gif" width="460" alt="Left: no zooms. Right: cut + zooms." /><br/>
+  <em>Same cut — left flat, right with hard-cut punch-zooms on the emphasised words.</em>
+</p>
+
 ## What it does
 
 You give it a video and a **zoom map** (a small JSON list of moments). It renders a new video where the framing punches in on the words you emphasise. Three moves:
