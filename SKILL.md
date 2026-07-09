@@ -1,3 +1,8 @@
+---
+name: add-zooms
+description: Add emphasis motion to a flat talking-head video file — dramatic hard-cut punch-zooms on emphasised words + listicles, and subtle Ken Burns slow-pushes on insightful lines. Transcript-driven, ffmpeg-based (zoompan), non-destructive. Use when the user says "add zooms", "/add-zooms", "punch in on the emphasised words", "add motion/energy to this clip", or has an already-cut .mp4 (e.g. a LinkedIn hot-take) that needs zoom emphasis. The file-based sibling of /tella-edit and /tella-cut.
+---
+
 # Add Zooms
 
 Add emphasis motion to a **flat talking-head video file** (usually a 9:16 vertical clip already cut for social): **dramatic punch-zooms** on emphasised words + listicles, and **Ken Burns slow-pushes** on insightful lines. Transcript-driven, ffmpeg-based, non-destructive (writes a new file).

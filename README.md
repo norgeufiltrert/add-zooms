@@ -9,6 +9,18 @@ Built for vertical (9:16) social clips — LinkedIn hot-takes, TikToks, Shorts �
   <em>Same cut — left flat, right with hard-cut punch-zooms on the emphasised words.</em>
 </p>
 
+## Install as a Claude Code skill
+
+```bash
+git clone https://github.com/louisedesadeleer/add-zooms.git
+cd add-zooms
+./install.sh
+```
+
+This symlinks the repo into `~/.claude/skills/add-zooms`, so `/add-zooms` becomes available in Claude Code and stays updatable with `git pull`. Re-running `./install.sh` reinstalls cleanly (it removes any existing copy first). Set `CLAUDE_SKILLS_DIR` to install somewhere other than `~/.claude/skills`.
+
+Prefer to run it standalone (no Claude Code)? Skip install and jump to [Quick start](#quick-start).
+
 ## What it does
 
 You give it a video and a **zoom map** (a small JSON list of moments). It renders a new video where the framing punches in on the words you emphasise. Three moves:
