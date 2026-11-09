@@ -5,6 +5,13 @@ description: Add emphasis motion to a flat talking-head video file — dramatic 
 
 # Add Zooms
 
+> **Norge Ufiltrert / Grok Bot setup (added by norgeufiltrert):**
+> - Language: most of our videos are Norwegian. Run Whisper with `--model small` (or `medium` for noisy audio) and **no `--language` flag** so it auto-detects; use `--language no` when you know the clip is Norwegian. The `.en` models only understand English.
+> - Computer: `-hwaccel videotoolbox` and `h264_videotoolbox` only work on a Mac. On Linux (e.g. Grok Bot's cloud computer) drop `-hwaccel videotoolbox` and encode with `-c:v libx264`.
+> - Install once: `ffmpeg`, `pip install -U openai-whisper` (on a Mac: `brew install ffmpeg`).
+> - Typical use for us: run on finished 9:16 clips from AutoClip before scheduling.
+
+
 Add emphasis motion to a **flat talking-head video file** (usually a 9:16 vertical clip already cut for social): **dramatic punch-zooms** on emphasised words + listicles, and **Ken Burns slow-pushes** on insightful lines. Transcript-driven, ffmpeg-based, non-destructive (writes a new file).
 
 This is the file-based sibling of `/tella-edit` and `/tella-cut` (which zoom *inside* Tella). Use `/add-zooms` when the video is already an `.mp4` on disk and you just want to add punch + push motion — e.g. a cut LinkedIn hot-take.
@@ -48,7 +55,7 @@ This is the file-based sibling of `/tella-edit` and `/tella-cut` (which zoom *in
 ### Step 1 — Transcribe with word timestamps
 ```
 ffmpeg -y -i INPUT -ac 1 -ar 16000 work/audio.wav
-whisper work/audio.wav --model small.en --language en --word_timestamps True \
+whisper work/audio.wav --model small --word_timestamps True \
   --output_format json --output_dir work
 ```
 Read `work/audio.json` → `segments[].words[]` = `{start,end,word}`.
